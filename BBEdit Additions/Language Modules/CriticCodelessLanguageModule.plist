@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BBEditDocumentType</key>
+	<string>CodelessLanguageModule</string>
+	<key>BBLMLanguageDisplayName</key>
+	<string>Critic</string>
+	<key>BBLMLanguageCode</key>
+	<string>crit</string>
+	<key>BBLMColorsSyntax</key>
+	<true/>
+	<key>BBLMScansFunctions</key>
+	<true/>
+	<key>BBLMIsCaseSensitive</key>
+	<false/>
+	<key>BBLMKeywordList</key>
+	<array>
+		<string>pique</string>
+		<string>peak</string>
+		<string>illicit</string>
+		<string>elicit</string>
+	</array>
+	<key>BBLMSuffixMap</key>
+	<array>
+		<dict>
+			<key>BBLMLanguageSuffix</key>
+			<string>.crit</string>
+		</dict>
+	</array>
+	<key>Language Features</key>
+	<dict>
+		<key>Comment Pattern</key>
+		<string>
+			((?s)\{(~~)(.*?)(~~)[ \t]*(\[(.*?)\])?[ \t]*\})
+		</string>
+		<key>Function Pattern</key>
+		<string><![CDATA[
+			(?P<function_name>(?s)(\{((\+\+)|(\-\-))(.*?)((\+\+)|(\-\-))[ \t]*(\[(.*?)\])?[ \t]*\}))
+		]]></string>
+		<key>Identifier and Keyword Character Class</key>
+		<string>
+			0-9A-Z_a-z',."
+		</string>
+		<key>Skip Pattern</key>
+		<string></string>
+		<key>String Pattern</key>
+		<string>
+			
+		</string>
+	</dict>
+</dict>
+</plist>

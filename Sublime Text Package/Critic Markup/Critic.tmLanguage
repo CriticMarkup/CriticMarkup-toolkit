@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>critic</string>
+	</array>
+	<key>name</key>
+	<string>Critic</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Editorial Addition</string>
+			<key>match</key>
+			<string>\{\+\+(.*?)\+\+[ \t]*(\[(.*?)\])?[ \t]*\}</string>
+			<key>name</key>
+			<string>string.addition</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Editorial Deletion</string>
+			<key>match</key>
+			<string>\{\-\-(.*?)\-\-[ \t]*(\[(.*?)\])?[ \t]*\}</string>
+			<key>name</key>
+			<string>string.deletion</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Editorial Deletion</string>
+			<key>match</key>
+			<string>\{~~(.*?)~~[ \t]*(\[(.*?)\])?[ \t]*\}</string>
+			<key>name</key>
+			<string>string.comment</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.html.markdown.critic</string>
+	<key>uuid</key>
+	<string>2a1dd069-4748-4825-bf5f-0bb7d2db26dd</string>
+</dict>
+</plist>
