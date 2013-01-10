@@ -1,7 +1,7 @@
-CriticMarkup-toolkit
+Welcome to the CriticMarkup Toolkit
 ====================
 
-Various tools to use CriticMarkup in your daily workflow
+The toolkit includes various code snippets and scripts to help you use CriticMarkup in your daily workflow.
 
 ## The Critic Markup Syntax ##
 
