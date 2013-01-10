@@ -1,4 +1,4 @@
-![CriticMarkup](http://high90.com/img/CriticMarkup-Logo.png)
+![CriticMarkup](http://high90.com/img/CriticMarkup-400px.png)
 
 Welcome to the CriticMarkup Toolkit
 ====================
