@@ -1,3 +1,5 @@
+![CriticMarkup](http://high90.com/img/CriticMarkup-Logo.png)
+
 Welcome to the CriticMarkup Toolkit
 ====================
 
