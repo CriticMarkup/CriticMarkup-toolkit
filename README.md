@@ -32,7 +32,7 @@ The Sublime Text package includes a language definition for Critic Markup. To in
 
 "/Users/<user_name>/Library/Application Support/Sublime Text 2/Packages"
 
-The select "Critic" as the language type in Sublime Text to reveal the syntax highlighting:
+Select "Critic" as the language type in Sublime Text to reveal the syntax highlighting:
 
 ![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130110_195820.jpg)
 
