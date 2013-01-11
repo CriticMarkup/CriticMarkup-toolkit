@@ -28,6 +28,14 @@ Is converted to:
 
 #### Sublime Text Tools ####
 
+The Sublime Text package includes a language definition for Critic Markup. To install the Sublime Package, drop it in the packages folder:
+
+"/Users/<user_name>/Library/Application Support/Sublime Text 2/Packages"
+
+The select "Critic" as the language type in Sublime Text to reveal the syntax highlighting:
+
+![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130110_195820.jpg)
+
 The plugin package provides several functions for working with Critic Markup:
 
 *list_critics*
@@ -68,9 +76,6 @@ This function provides a quick way to wrap the selected text in a Critic Markup 
 
 The *mark_critic* method works on multiple selections at once for synchronous marking of multiple words or phrase.
 
-To install the Sublime Package, drop it in the packages folder:
-
-"/Users/<user_name>/Library/Application Support/Sublime Text 2/Packages"
 
 To bind these functions to keyboard shortcuts, add the following entries to the Sublime Text User Key Bindings:
 
@@ -83,6 +88,8 @@ To bind these functions to keyboard shortcuts, add the following entries to the 
 #### BBEdit Tools ####
 
 The BBEdit folder contains one Codeless Language Module and one AppleScript. The language module defines Critic comments as language comments and Critic additions and deletions as functions.
+
+**Note**: The BBEdit codeless language module is still under development. Defining additions and deletions has some advantages for scope selection but I'm not particularly happy with the current design. The regex matching for comments is still a bit hit and miss.
 
 The Critic marks can be selected from the function list in BBEdit. Selecting a mark in the list will completely select the string in the editor window.
 
