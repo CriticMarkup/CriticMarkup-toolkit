@@ -100,3 +100,9 @@ Once a mark is selected, it can be accepted or rejected using the System Service
 #### Keyboard Maestro Macros ####
 
 There are three Keyboard Maestro macros to make entering Critic marks easier. If text is selected in an application, the macros will convert them into the corresponding Critic mark. Without text selected, a generic Critic mark will be inserted.
+
+------------
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CriticMarkup</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://criticmarkup.com" property="cc:attributionName" rel="cc:attributionURL">Gabriel Weatherhead and Erik Hess</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://daringfireball.net/projects/markdown/" rel="dct:source">http://daringfireball.net/projects/markdown/</a>.
+
+------------
