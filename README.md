@@ -9,6 +9,23 @@ For more information about the CriticMarkup syntax, visit the CriticMarkup websi
 
 While Critic Markup can be used with any text editor on any device, we have created several convenient tools to make working with Critic easy and helpful. All the tools listed below assume adherence with the Critic standards outlined above. Deviation from the documented standards will render the tools below non-functional.
 
+#### Marked Processors and CSS ####
+
+There are a couple of processor scripts for use with Brett Terpstra's excellent Marked.app for Mac. If you are using Marked 1.5 there is a pre-processor script. Marked handles all the Markdown conversion and the pre-processor converts the Critic Markup to "ins", "del", and "aside" tags. The script also injects some styling for the these tags.
+
+To configure the pre-processor, go to the preferences "behavior" section and point the pre-processor to the script. 
+
+
+![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130113_152005.jpg)
+
+
+You must make the python pre-processor script executeable with the following command:
+
+    sudo chmod a+x <path_to_processor_script_file>
+
+
+If you are using an earlier version of Marked.app, there is a processor that also converts the markdown using the Python [markdown2 module](http://code.google.com/p/python-markdown2/). For this to work, you will need to install the markdown2 module on your system.
+
 #### Mac System Plugins ####
 
 There are two system services to use with Critic. These can be installed in the normal System Services folder:
