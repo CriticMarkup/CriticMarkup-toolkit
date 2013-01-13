@@ -25,6 +25,7 @@ Is converted to:
 
     Lorem ipsum dolor sit amet...
 
+**Development Note: There's still a bug with the system service when a snippet is replaced by an empty string (for example when accepting a Deletion). Apparently a system service can not replace selected text with an empty string.**
 
 #### Sublime Text Tools ####
 
@@ -89,9 +90,11 @@ To bind these functions to keyboard shortcuts, add the following entries to the 
 
 The BBEdit folder contains one Codeless Language Module and one AppleScript. The language module defines Critic comments as language comments and Critic additions and deletions as functions.
 
-**Note**: The BBEdit codeless language module is still under development. Defining additions and deletions has some advantages for scope selection but I'm not particularly happy with the current design. The regex matching for comments is still a bit hit and miss.
+**Development Note: The BBEdit codeless language module is still under development. Defining additions and deletions has some advantages for scope selection but I'm not particularly happy with the current design. The regex matching for comments is still a bit hit and miss.**
 
 The Critic marks can be selected from the function list in BBEdit. Selecting a mark in the list will completely select the string in the editor window.
+
+![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130113_142157.jpg)
 
 The AppleScript for BBEdit works similarly and can be used without the language module. The "Select Critic Mark" script will open a list selector window with a complete list of all Critic marks in the document. Select a mark and click "Ok" to select the entire mark in the editor window.
 
