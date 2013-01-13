@@ -24,7 +24,7 @@ You must make the python pre-processor script executeable with the following com
     sudo chmod a+x <path_to_processor_script_file>
 
 
-If you are using an earlier version of Marked.app, there is a processor that also converts the markdown using the Python [markdown2 module](http://code.google.com/p/python-markdown2/). For this to work, you will need to install the markdown2 module on your system.
+If you are using an earlier version of Marked.app, there is a processor that also converts the markdown using the Python [markdown2 module](http://code.google.com/p/python-markdown2/). For this to work, you will need to install the markdown2 module on your system. Configure Marked.app to use the processor in the preferences by selecting the processor option and adding the path to the python script.
 
 #### Mac System Plugins ####
 
