@@ -22,6 +22,10 @@ To configure the pre-processor, go to the preferences "behavior" section and poi
 You must make the python pre-processor script executeable with the following command:
 
     sudo chmod a+x <path_to_processor_script_file>
+    
+You must also disable the headline collapsing feature of Marked as this appears to conflict with the rendered file:
+
+![](http://www.macdrifter.com/uploads/2013/01/Screen_Shot_20130113_200742.jpg)
 
 
 If you are using an earlier version of Marked.app, there is a processor that also converts the markdown using the Python [markdown2 module](http://code.google.com/p/python-markdown2/). For this to work, you will need to install the markdown2 module on your system. Configure Marked.app to use the processor in the preferences by selecting the processor option and adding the path to the python script.
