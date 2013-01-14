@@ -30,6 +30,12 @@ You must also disable the headline collapsing feature of Marked as this appears 
 
 If you are using an earlier version of Marked.app, there is a processor that also converts the markdown using the Python [markdown2 module](http://code.google.com/p/python-markdown2/). For this to work, you will need to install the markdown2 module on your system. Configure Marked.app to use the processor in the preferences by selecting the processor option and adding the path to the python script.
 
+The Marked processor provides a change tracking view similar to Microsoft Word:
+
+![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130113_202915.jpg)
+
+There is a three pane view presented. The "Markup" view shows additions, deletions and comments. The "Original" view shows the text as it was before editorial Critic markup. Finally, the "Edited" view shows the text as it would appear if the user accepted all editorial changes.
+
 #### Mac System Plugins ####
 
 There are two system services to use with Critic. These can be installed in the normal System Services folder:
