@@ -34,6 +34,7 @@ def commentProcess(group_object):
 	return replaceString
 
 a = '''
+
 <style>
 	#wrapper {
 		padding-top: 30px !important;
