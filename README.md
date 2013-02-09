@@ -5,7 +5,7 @@ Welcome to the CriticMarkup Toolkit
 
 Critic Markup is intended to provide basic editorial change tracking in plain text files. The syntax is compatible with Markdown, MultiMarkdown and HTML.
 
-### The Three Laws ### 
+### The Three Laws ###
 
 1. Critic Markup shall be human readable. A human with a simple text editor can easily read and comprehend any text containing Critic Markup.
 2. Critic Markup shall be computer readable except where it conflicts with rule 1. Markup syntax should be easily parsed with simple regular expressions to support a wide variety of implementations.
@@ -137,7 +137,6 @@ Rules for proper use of the `<mark>` element can be found in the [HTML 5 spec](h
 
 When used in combination the marks can indicate more complex changes.
 
-<<<<<<< HEAD
 	Don’t go around saying{‐‐ to people that‐‐} the world owes you a living. The world owes you nothing. It was here first. {~~One~>Only one~~} thing is impossible for God: To find {++any++} sense in any copyright law on the planet. {{Truth is stranger than fiction}}{>>true<<}, but it is because Fiction is obliged to stick to possibilities; Truth isn’t.
 
 The above paragraphs should render to HTML in the following manner.
@@ -162,7 +161,7 @@ Instead, wrap the asterisks completely:
 
 	I really love {~~*italic fonts*~>*italic font-styles*~~}.
 
-=======
+
     Copyright 2013 Gabe Weatherhead and Erik Hess
 
     Licensed under the Apache License, Version 2.0 (the "License");
@@ -176,4 +175,4 @@ Instead, wrap the asterisks completely:
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
->>>>>>> fe74022d7486c8a329ea1456eb345cb6cd723699
+
