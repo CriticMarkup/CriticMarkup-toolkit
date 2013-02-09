@@ -47,17 +47,29 @@ A space character and "sit" are to be added at the position of the left (or righ
 
 Paragraphs may be inserted in the same manner.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.{++
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci
+	magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.
+	Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.{++
 
-	++}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
+	++}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero,
+	quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros
+	accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus.
+	Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras
+	tincidunt auctor varius.
 
 To ensure the Markdown processor outputs valid HTML, the `<ins>` tag encloses a non-breaking space and is followed by two newlines. The result is that both paragraphs render separately. The non-breaking-space gives the tag enough content to render properly, and we assign class=break to allow for custom styling.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci
+	magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.
+	Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
 
 	<ins class=”break”>&nbsp;</ins>
 
-	Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
+	Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero,
+	quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros
+	accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed
+	neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt
+	auctor varius.
 
 Rules for proper use of the `<ins>` element can be found in the [HTML 4 spec](http://www.w3.org/TR/REC-html40/struct/text.html#h-9.4).
 
@@ -73,13 +85,26 @@ The word "ipsum" and a space character are marked for deletion in the above exam
 
 Paragraphs may also be deleted.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.{‐‐
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci
+	magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.
+	Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.{‐‐
 
-	‐‐}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
+	‐‐}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero,
+	quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros
+	accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus.
+	Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras
+	tincidunt auctor varius.
 
 The newlines will be removed by the processor and replaced by an inline `<del>` tag. Again, the non-breaking-space gives the tag enough content to render properly.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.<del>&nbsp;</del> Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci
+	magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.
+	Mauris massa sem, tempor sed cursus et, semper tincidunt lacus. 
+	<del>&nbsp;</del> Praesent sagittis, quam id egestas consequat, nisl
+	orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget
+	orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet
+	vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc.
+	Cras tincidunt auctor varius.
 
 Rules for proper use of the `<del>` element can be found in the [HTML 4 spec](http://www.w3.org/TR/REC-html40/struct/text.html#h-9.4).
 
@@ -95,15 +120,28 @@ Despite the unique syntax, substitutions should render as a deletion followed by
 
 Newlines are treated the same as a deletion or insertion, depending on where they're located.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. {~~Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.~>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci
+	magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.
+	{~~Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.~>
 
-	~~}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
+	~~}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero,
+	quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros
+	accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus.
+	Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras
+	tincidunt auctor varius.
 
 After rendering this example, the deletion and insertion are added to the end of the first paragraph and two newlines ensure the proper paragraph break.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. <del>Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.</del><ins class=”break”>&nbsp;</ins>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci
+	magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.
+	<del>Mauris massa sem, tempor sed cursus et, semper tincidunt
+	lacus.</del><ins class=”break”>&nbsp;</ins>
 
-	Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
+	Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero,
+	quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros
+	accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed
+	neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt
+	auctor varius.
 
 #### Comments ####
 
@@ -125,11 +163,17 @@ Rules for proper use of the `<span>` element can be found in the [HTML 4 spec](h
 
 Highlights may be added as required by an editor or author, and are noted by double curly braces. While a highlight can stand on its own, it's almost always followed by a comment related to the highlighted passage.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. {{Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.}}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. {{Vestibulum at
+	orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget
+	nulla.}}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper
+	tincidunt lacus.
 
 Highlights should be rendered as `<mark>` tags in the processed HTML.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. <mark>Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.</mark><span class=”critic metadata”>confusing</span> Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. <mark>Vestibulum at
+	orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget
+	nulla.</mark><span class=”critic metadata”>confusing</span> Mauris massa
+	sem, tempor sed cursus et, semper tincidunt lacus.
 
 Rules for proper use of the `<mark>` element can be found in the [HTML 5 spec](http://www.w3.org/html/wg/drafts/html/master/single-page.html#the-mark-element).
 
@@ -137,11 +181,20 @@ Rules for proper use of the `<mark>` element can be found in the [HTML 5 spec](h
 
 When used in combination the marks can indicate more complex changes.
 
-	Don’t go around saying{‐‐ to people that‐‐} the world owes you a living. The world owes you nothing. It was here first. {~~One~>Only one~~} thing is impossible for God: To find {++any++} sense in any copyright law on the planet. {{Truth is stranger than fiction}}{>>true<<}, but it is because Fiction is obliged to stick to possibilities; Truth isn’t.
+	Don’t go around saying{‐‐ to people that‐‐} the world owes you a living. The
+	world owes you nothing. It was here first. {~~One~>Only one~~} thing is
+	impossible for God: To find {++any++} sense in any copyright law on the
+	planet. {{Truth is stranger than fiction}}{>>true<<}, but it is because
+	Fiction is obliged to stick to possibilities; Truth isn’t.
 
 The above paragraphs should render to HTML in the following manner.
 
-	Don’t go around saying<del> to people that</del> the world owes you a living. The world owes you nothing. It was here first. <del>One</del><ins>Only one</ins> thing is impossible for God: To find <ins>any</ins> sense in any copyright law on the planet. <mark>Truth is stranger than fiction</mark><span class=”critic comment”>true</span>, but it is because Fiction is obliged to stick to possibilities; Truth isn’t.
+	Don’t go around saying<del> to people that</del> the world owes you a
+	living. The world owes you nothing. It was here first.
+	<del>One</del><ins>Only one</ins> thing is impossible for God: To find
+	<ins>any</ins> sense in any copyright law on the planet. <mark>Truth is
+	stranger than fiction</mark><span class=”critic comment”>true</span>, but it
+	is because Fiction is obliged to stick to possibilities; Truth isn’t.
 
 ### Caveats ###
 
