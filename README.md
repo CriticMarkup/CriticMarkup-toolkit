@@ -137,6 +137,7 @@ Rules for proper use of the `<mark>` element can be found in the [HTML 5 spec](h
 
 When used in combination the marks can indicate more complex changes.
 
+<<<<<<< HEAD
 	Don’t go around saying{‐‐ to people that‐‐} the world owes you a living. The world owes you nothing. It was here first. {~~One~>Only one~~} thing is impossible for God: To find {++any++} sense in any copyright law on the planet. {{Truth is stranger than fiction}}{>>true<<}, but it is because Fiction is obliged to stick to possibilities; Truth isn’t.
 
 The above paragraphs should render to HTML in the following manner.
@@ -161,16 +162,18 @@ Instead, wrap the asterisks completely:
 
 	I really love {~~*italic fonts*~>*italic font-styles*~~}.
 
-	Copyright 2013 Gabe Weatherhead and Erik Hess
+=======
+    Copyright 2013 Gabe Weatherhead and Erik Hess
 
-	Licensed under the Apache License, Version 2.0 (the "License");
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-	http://www.apache.org/licenses/LICENSE-2.0
+     http://www.apache.org/licenses/LICENSE-2.0
 
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an "AS IS" BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+>>>>>>> fe74022d7486c8a329ea1456eb345cb6cd723699
