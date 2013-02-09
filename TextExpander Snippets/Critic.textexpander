@@ -13,7 +13,7 @@
 	<array>
 		<dict>
 			<key>abbreviation</key>
-			<string>;swap</string>
+			<string>;sub</string>
 			<key>abbreviationMode</key>
 			<integer>0</integer>
 			<key>creationDate</key>
@@ -21,21 +21,23 @@
 			<key>flags</key>
 			<integer>0</integer>
 			<key>label</key>
-			<string>Swap</string>
+			<string>Substitution</string>
+			<key>lastUsed</key>
+			<date>2013-02-09T19:04:48Z</date>
 			<key>modificationDate</key>
-			<date>2013-01-08T00:04:22Z</date>
+			<date>2013-02-09T23:12:32Z</date>
 			<key>plainText</key>
-			<string>{--%clipboard--}{++%|++}</string>
+			<string>{~~%|~&gt; ~~}</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
-			<integer>0</integer>
+			<integer>9</integer>
 			<key>uuidString</key>
 			<string>64F5C851-5914-4E60-9166-C5F0466F5E62</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
-			<string>;meta</string>
+			<string>;com</string>
 			<key>abbreviationMode</key>
 			<integer>0</integer>
 			<key>creationDate</key>
@@ -43,21 +45,23 @@
 			<key>flags</key>
 			<integer>0</integer>
 			<key>label</key>
-			<string>Metadata</string>
+			<string>Comment</string>
+			<key>lastUsed</key>
+			<date>2013-01-20T14:03:04Z</date>
 			<key>modificationDate</key>
-			<date>2013-01-07T23:59:03Z</date>
+			<date>2013-02-09T23:13:33Z</date>
 			<key>plainText</key>
-			<string>[@EMH %Y.%m.%d.%1H%M]</string>
+			<string>{&gt;&gt;%|&lt;&lt;}</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
-			<integer>0</integer>
+			<integer>13</integer>
 			<key>uuidString</key>
 			<string>B4E2CC07-5BDA-49FD-B52F-AEEC3141C46C</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
-			<string>;add</string>
+			<string>;ins</string>
 			<key>abbreviationMode</key>
 			<integer>0</integer>
 			<key>creationDate</key>
@@ -65,17 +69,17 @@
 			<key>flags</key>
 			<integer>0</integer>
 			<key>label</key>
-			<string>Addition</string>
+			<string>Insertion</string>
 			<key>lastUsed</key>
-			<date>2013-01-08T00:03:35Z</date>
+			<date>2013-02-09T19:43:09Z</date>
 			<key>modificationDate</key>
-			<date>2013-01-07T23:58:11Z</date>
+			<date>2013-01-24T13:28:07Z</date>
 			<key>plainText</key>
 			<string>{++%|++}</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
-			<integer>62</integer>
+			<integer>69</integer>
 			<key>uuidString</key>
 			<string>6D53197B-AF90-4E51-8F7E-809CE32A1FC7</string>
 		</dict>
@@ -91,21 +95,21 @@
 			<key>label</key>
 			<string>Deletion</string>
 			<key>lastUsed</key>
-			<date>2013-01-08T00:05:21Z</date>
+			<date>2013-02-09T19:51:39Z</date>
 			<key>modificationDate</key>
-			<date>2013-01-07T23:57:59Z</date>
+			<date>2013-01-16T00:51:20Z</date>
 			<key>plainText</key>
-			<string>{--%clipboard--}</string>
+			<string>{--%|--}</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
-			<integer>54</integer>
+			<integer>66</integer>
 			<key>uuidString</key>
 			<string>723F6FB3-9F9C-4816-A5C3-54353105C035</string>
 		</dict>
 		<dict>
 			<key>abbreviation</key>
-			<string>;com</string>
+			<string>;hi</string>
 			<key>abbreviationMode</key>
 			<integer>0</integer>
 			<key>creationDate</key>
@@ -113,17 +117,17 @@
 			<key>flags</key>
 			<integer>0</integer>
 			<key>label</key>
-			<string>Comment</string>
+			<string>Highlight</string>
 			<key>lastUsed</key>
-			<date>2013-01-02T23:32:01Z</date>
+			<date>2013-01-24T15:22:59Z</date>
 			<key>modificationDate</key>
-			<date>2013-01-07T23:58:07Z</date>
+			<date>2013-02-09T23:13:38Z</date>
 			<key>plainText</key>
-			<string>{~~%|~~}</string>
+			<string>{{%|}}</string>
 			<key>snippetType</key>
 			<integer>0</integer>
 			<key>useCount</key>
-			<integer>19</integer>
+			<integer>20</integer>
 			<key>uuidString</key>
 			<string>FC0210FA-2C6E-4129-98DA-BD87C5B65844</string>
 		</dict>

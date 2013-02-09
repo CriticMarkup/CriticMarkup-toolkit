@@ -12,6 +12,14 @@
 	<array>
 		<dict>
 			<key>comment</key>
+			<string>Editorial Substitution</string>
+			<key>match</key>
+			<string>\{~~(.*?)~~\}</string>
+			<key>name</key>
+			<string>string.substitution</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Editorial Addition</string>
 			<key>match</key>
 			<string>\{\+\+(.*?)\+\+[ \t]*(\[(.*?)\])?[ \t]*\}</string>
@@ -27,13 +35,22 @@
 			<string>string.deletion</string>
 		</dict>
 		<dict>
-			<key>comment</key>
-			<string>Editorial Deletion</string>
+			<key>highlight</key>
+			<string>Editorial Highlight</string>
 			<key>match</key>
-			<string>\{~~(.*?)~~[ \t]*(\[(.*?)\])?[ \t]*\}</string>
+			<string>\{\{(.*?)[ \t]*(\[(.*?)\])?[ \t]*\}\}</string>
+			<key>name</key>
+			<string>string.highlight</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Editorial Mark</string>
+			<key>match</key>
+			<string>\{&gt;&gt;(.*?)&lt;&lt;\}</string>
 			<key>name</key>
 			<string>string.comment</string>
 		</dict>
+
 	</array>
 	<key>scopeName</key>
 	<string>text.html.markdown.critic</string>

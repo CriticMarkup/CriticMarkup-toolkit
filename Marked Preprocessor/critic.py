@@ -3,34 +3,76 @@ import sys
 import os
 import re
 
+
+
 add_pattern = r'''(?s)\{\+\+(?P<value>.*?)\+\+[ \t]*(\[(?P<meta>.*?)\])?[ \t]*\}'''
 
 del_pattern = r'''(?s)\{\-\-(?P<value>.*?)\-\-[ \t]*(\[(?P<meta>.*?)\])?[ \t]*\}'''
 
-comm_pattern = r'''(?s)\{~~(?P<value>.*?)~~[ \t]*(\[(?P<meta>.*?)\])?[ \t]*\}'''
+comm_pattern = r'''(?s)\{\>\>(?P<value>.*?)\<\<\}'''
 
-# Converts Addition markup to HTML
-def additionProcess(group_object):
-	replaceString = '<ins>'+group_object.group('value')
-	if group_object.group('meta'):
-		replaceString = replaceString+'<span class="criticmeta">'+group_object.group('meta')+'</span>'
-	replaceString = replaceString+'</ins>'
-	return replaceString
+gen_comm_pattern = r'''(?s)\{[ \t]*\[(?P<meta>.*?)\][ \t]*\}'''
+
+subs_pattern = r'''(?s)\{\~\~(?P<original>(?:[^\~\>]|(?:\~(?!\>)))+)\~\>(?P<new>(?:[^\~\~]|(?:\~(?!\~\})))+)\~\~\}'''
+
+
+
+mark_pattern = r'''(?s)\{\{(?P<value>.*?)\}\}'''
+
+
+test_pattern = '''{~~Eighty-seven~>Four score and seven~~} years ago our fathers brought forth on this continent a new {~~state~>nation~~}, conceived in liberty, and dedicated to the proposition that all men {--and women--}{>>Tackle this after the war<<} are created equal.'''
+
 
 
 def deletionProcess(group_object):
-	replaceString = '<del>'+group_object.group('value')
-	if group_object.group('meta'):
-		replaceString = replaceString+'<span class="criticmeta">'+group_object.group('meta')+'</span>'
-	replaceString = replaceString+'</del>'
+	replaceString = ''
+	if group_object.group('value') == '\n\n':
+		replaceString = "<del>&nbsp;</del>"
+	else:
+		replaceString = '<del>' + group_object.group('value').replace("\n\n", "&nbsp;") + '</del>'
 	return replaceString
 
 
-def commentProcess(group_object):
-	replaceString = '<aside>'+group_object.group('value')
-	if group_object.group('meta'):
-		replaceString = replaceString+'<span class="criticmeta">'+group_object.group('meta')+'</span>'
-	replaceString = replaceString+'</aside>'
+
+def subsProcess(group_object):
+	delString = '<del>' + group_object.group('original') + '</del>'
+	insString  = '<ins>' + group_object.group('new') + '</ins>'
+	return delString + insString
+
+
+# Converts Addition markup to HTML
+def additionProcess(group_object):
+	replaceString = ''
+	
+	# Is there a new paragraph followed by new text
+	if group_object.group('value').startswith('\n\n') and group_object.group('value') != "\n\n":
+		replaceString = "\n\n<ins class='critic' break>&nbsp;</ins>\n\n"
+		replaceString = replaceString + '<ins>' + group_object.group('value').replace("\n", " ")
+		replaceString = replaceString +  '</ins>'
+		
+	
+	# Is the addition just a single new paragraph
+	elif group_object.group('value') == "\n\n":
+		replaceString = "\n\n<ins class='critic break'>&nbsp;" + '</ins>\n\n'
+	
+	# Is it added text followed by a new paragraph?
+	elif group_object.group('value').endswith('\n\n') and group_object.group('value') != "\n\n":
+		replaceString = '<ins>' + group_object.group('value').replace("\n", " ") + '</ins>'
+		replaceString = replaceString + "\n\n<ins class='critic break'>&nbsp;</ins>\n\n"
+		
+	else:
+		replaceString = '<ins>' + group_object.group('value').replace("\n", " ") + '</ins>'
+		
+
+	return replaceString
+
+def highlightProcess(group_object):
+	replaceString = '<span class="critic comment">' + group_object.group('value').replace("\n", " ") + '</span>'
+	return replaceString
+	
+
+def markProcess(group_object):
+	replaceString = '<mark>' + group_object.group('value') + '</mark>'
 	return replaceString
 
 a = '''
@@ -71,7 +113,11 @@ a = '''
 		text-transform: uppercase;
 	}
 
-	#criticnav ul li#markup-button {
+	#criticnav ul li:before {
+		content: none !important;
+	}
+
+	#criticnav ul li#edited-button {
 		border-right: 1px solid #ccc;
 	}
 
@@ -85,8 +131,8 @@ a = '''
 	}	
 
 	.original ins,
-	.original aside,
-	.original del span {
+	.original span.popover,
+	.original ins.break {
 		display: none;
 	}
 
@@ -96,14 +142,19 @@ a = '''
 	}	
 
 	.edited del,
-	.edited aside,
-	.edited ins span {
+	.edited span.popover,
+	.edited ins.break {
 		display: none;
 	}
 
-	.markup aside {
-	    font-size: 0.9em;
-	    color: #ff0000;
+	.original mark,
+	.edited mark {
+		background-color: transparent;
+	}
+
+	.markup mark {
+	    background-color: #fffd38;
+	    text-decoration: none;
 	}
 
 	.markup del {
@@ -116,21 +167,31 @@ a = '''
 	    text-decoration: none;
 	}
 
-	.markup del span.criticmeta,
-	.markup ins span.criticmeta {
+	.markup ins.break {
+		display: block;
+		line-height: 2px;
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.markup ins.break span {
+		line-height: 1.5em;
+	}
+
+	.markup .popover {
+		background-color: #4444ff;
+		color: #fff;
+	}
+
+	.markup .popover .critic.comment {
 	    display: none;
 	}
 
-	.markup aside span.criticmeta {
-	    display: block;
-	    color: #999;
-	}
-
-	.markup del:hover span.criticmeta,
-	.markup ins:hover span.criticmeta {
+	.markup .popover:hover span.critic.comment {
 	    display: block;
 	    position: absolute;
-	    left: 20%;
+	    width: 200px;
+	    left: 30%;
 	    font-size: 0.8em; 
 	    color: #ccc;
 	    background-color: #333;
@@ -138,23 +199,6 @@ a = '''
 	    padding: 0.5em 1em;
 	    border-radius: 0.5em;
 	}
-
-	@media (min-width:640px) {
-	
-		.markup {
-			margin-right: 35% !important;
-		}
-
-		.markup aside {
-		    display: block;
-		    position: absolute;
-		    left: 70%;
-		    width: 25%;
-		    font-size: 0.9em;
-		    color: #ff0000;
-		}
-
-    }
 }
 
 </style>
@@ -175,6 +219,9 @@ a = '''
 		$('#firstdiff').remove();
 		$('#wrapper').addClass('markup');
 		$('#markup-button').addClass('active');
+		$('ins.break').unwrap();
+		$('span.critic.comment').wrap('<span class="popover" />');
+		$('span.critic.comment').before('&#8225;');
 
 	}  
 
@@ -220,14 +267,28 @@ a = '''
 </script>
 '''
 
+
 # Accept input from Marked.app
-inputText = sys.stdin.read()
 
-h = re.sub(add_pattern, additionProcess, inputText)
+h = sys.stdin.read()
 
-h = re.sub(del_pattern, deletionProcess, h)
+#h = test_pattern
 
-h = re.sub(comm_pattern, commentProcess, h)
+
+
+
+
+h = re.sub(del_pattern, deletionProcess, h, flags=re.DOTALL)
+
+h = re.sub(add_pattern, additionProcess, h, flags=re.DOTALL)
+
+h = re.sub(comm_pattern, highlightProcess, h, flags=re.DOTALL)
+
+h = re.sub(mark_pattern, markProcess, h, flags=re.DOTALL)
+
+h = re.sub(subs_pattern, subsProcess, h, flags=re.DOTALL)
+
+# print h
 
 z = h + a
 

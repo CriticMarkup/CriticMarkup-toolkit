@@ -63,6 +63,19 @@
         </dict>
         <dict>
             <key>name</key>
+            <string>highlight</string>
+            <key>scope</key>
+            <string>string.highlight</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <string>#DF37DD</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
             <string>Deletion</string>
             <key>scope</key>
             <string>string.deletion</string>
@@ -85,6 +98,32 @@
                 <string></string>
                 <key>foreground</key>
                 <string>#4D5CD3</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>blockcomment</string>
+            <key>scope</key>
+            <string>string.blockcomment</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#4D5CD3</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>substitution</string>
+            <key>scope</key>
+            <string>string.substitution</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string></string>
+                <key>foreground</key>
+                <string>#E78400</string>
             </dict>
         </dict>
         <dict>

@@ -3,136 +3,174 @@
 Welcome to the CriticMarkup Toolkit
 ====================
 
-The toolkit includes various code snippets and scripts to help you use CriticMarkup in your daily workflow.
+Critic Markup is intended to provide basic editorial change tracking in plain text files. The syntax is compatible with Markdown, MultiMarkdown and HTML.
 
-For more information about the CriticMarkup syntax, visit the CriticMarkup website at [http://criticmarkup.com](http://criticmarkup.com) or check out our [Github Wiki](https://github.com/CriticMarkup/CriticMarkup-toolkit/wiki).
+### The Three Laws ### 
 
-While Critic Markup can be used with any text editor on any device, we have created several convenient tools to make working with Critic easy and helpful. All the tools listed below assume adherence with the Critic standards outlined above. Deviation from the documented standards will render the tools below non-functional.
+1. Critic Markup shall be human readable. A human with a simple text editor can easily read and comprehend any text containing Critic Markup.
+2. Critic Markup shall be computer readable except where it conflicts with rule 1. Markup syntax should be easily parsed with simple regular expressions to support a wide variety of implementations.
+3. Critic Markup shall be compatible with existing markup syntax for Markdown, MultiMarkdown and HTML except where it conflicts with rules one or two. Many users of plain text write in combinations of Markdown and HTML. Critic Markup should work alongside that syntax.
 
-#### Marked Processors and CSS ####
+### The Goal ###
 
-There are a couple of processor scripts for use with Brett Terpstra's excellent Marked.app for Mac. If you are using Marked 1.5 there is a pre-processor script. Marked handles all the Markdown conversion and the pre-processor converts the Critic Markup to "ins", "del", and "aside" tags. The script also injects some styling for the these tags.
+Critic Markup can be used in any writing environment without special applications or tool kits. While we have supplied processors and plugins that are compatible with popular apps, they are not required.
 
-To configure the pre-processor, go to the preferences "behavior" section and point the pre-processor to the script. 
+Critic Markup should be readable inline and clearly indicate the intent of the editor and author.
 
+Critic Markup should support change tracking with multiple authors and editors through the use of comments.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130113_152005.jpg)
+### Plain Text and HTML ###
 
+Critic Markup may be used without a conversion to HTML. However, as with Markdown, HTML may be a desirable format for a more stylized presentation. We have several recommendations for how Critic Markup may be converted to HTML. The intent is to allow the HTML to be used without custom CSS. However, custom CSS may be used to enhance the review process.
 
-You must make the python pre-processor script executeable with the following command:
+### The Basic Syntax ###
 
-    sudo chmod a+x <path_to_processor_script_file>
-    
-You must also disable the headline collapsing feature of Marked as this appears to conflict with the rendered file:
+There are five types of Critic marks: 
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen_Shot_20130113_200742.jpg)
+* Addition `{++ ++}`
+* Deletion `{-- --}`
+* Substitution `{~~ ~> ~~}`
+* Comment `{>> <<}`
+* Highlight `{{ }}`
 
+Using these five basic marks you can successfully copy edit in plain text.
 
-If you are using an earlier version of Marked.app, there is a processor that also converts the markdown using the Python [markdown2 module](http://code.google.com/p/python-markdown2/). For this to work, you will need to install the markdown2 module on your system. Configure Marked.app to use the processor in the preferences by selecting the processor option and adding the path to the python script.
+#### Additions ####
 
-The Marked processor provides a change tracking view similar to Microsoft Word:
+Additions are inserted inline by surrounding the desired text with curly braces and double plus marks as shown:
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130113_202915.jpg)
+	Lorem ipsum dolor{++ sit++} amet...
 
-There is a three pane view presented. The "Markup" view shows additions, deletions and comments. The "Original" view shows the text as it was before editorial Critic markup. Finally, the "Edited" view shows the text as it would appear if the user accepted all editorial changes.
+A space character and "sit" are to be added at the position of the left (or right) most curly brace. The additions may be rendered as `<ins>` tags in the processed HTML:
 
-#### Mac System Plugins ####
+	Lorem ipsum dolor<ins> sit<ins> amet…
 
-There are two system services to use with Critic. These can be installed in the normal System Services folder:
+Paragraphs may be inserted in the same manner.
 
-    /Users/<user_name>/Library/Services
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.{++
 
-The system services will Accept or Reject a selected Critic mark as appropriate. Select a Critic mark in any Mac application and then trigger the service to change the markup to standard text.
+	++}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
 
-For example:
+To ensure the Markdown processor outputs valid HTML, the `<ins>` tag encloses a non-breaking space and is followed by two newlines. The result is that both paragraphs render separately. The non-breaking-space gives the tag enough content to render properly, and we assign class=break to allow for custom styling.
 
-    Lorem ipsum dolor{++ sit++} amet...
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
 
-Is converted to:
+	<ins class=”break”>&nbsp;</ins>
 
-    Lorem ipsum dolor sit amet...
+	Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
 
-**Development Note: There's still a bug with the system service when a snippet is replaced by an empty string (for example when accepting a Deletion). Apparently a system service can not replace selected text with an empty string.**
+Rules for proper use of the `<ins>` element can be found in the [HTML 4 spec](http://www.w3.org/TR/REC-html40/struct/text.html#h-9.4).
 
-#### Sublime Text Tools ####
+#### Deletions ####
 
-The Sublime Text package includes a language definition for Critic Markup. To install the Sublime Package, drop it in the packages folder:
+Deletions are denoted with a similar syntax. The text to be deleted is surrounded with curly braces and double hyphens.
 
-"/Users/<user_name>/Library/Application Support/Sublime Text 2/Packages"
+	Lorem{‐‐ ipsum‐‐} dolor sit amet…
 
-Select "Critic" as the language type in Sublime Text to reveal the syntax highlighting:
+The word "ipsum" and a space character are marked for deletion in the above example. These deletions are rendered as `<del>` tags in the processed HTML.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130111_111656.jpg)
+	Lorem<del> ipsum</del> dolor sit amet…
 
-The plugin package provides several functions for working with Critic Markup:
+Paragraphs may also be deleted.
 
-*list_critics*
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.{‐‐
 
-This command produces a complete list of all Critic Markup tags in the current document. Selecting an item from the list 
+	‐‐}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130103_222655_std.jpg)
+The newlines will be removed by the processor and replaced by an inline `<del>` tag. Again, the non-breaking-space gives the tag enough content to render properly.
 
-will scroll to the corresponding position in the document and select the entire Critic tag.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.<del>&nbsp;</del> Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130103_222716_std.jpg)
+Rules for proper use of the `<del>` element can be found in the [HTML 4 spec](http://www.w3.org/TR/REC-html40/struct/text.html#h-9.4).
 
-*accept_critics_comments*
+#### Substitutions ####
 
-This command similarly lists all comments in the current document:
+Substitutions combine a delete with an insert in one snippet, and are written as curly braces and double tildes. A squiggly arrow made up of a tilde and greater-than symbol separates the old and new text. The characters to be deleted always occur to the left of the squiggly arrow.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130103_223719_std.jpg)
+	Lorem {~~hipsum~>ipsum~~} dolor sit amet…
 
-Selecting a comment from the list will scroll the window to the comment and select the entire Critic tag.
+Despite the unique syntax, substitutions should render as a deletion followed by an insertion.
 
-*accept_critic*
+	Lorem <del>hipsum</del><ins>ipsum</ins> dolor sit amet…
 
-This command is best when combined with the *list_critics* command. With an entire critic tag selected, the *accept_critic* command will display a choice of accepting or rejecting the current Critic Mark:
+Newlines are treated the same as a deletion or insertion, depending on where they're located.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130103_224025_std.jpg)
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. {~~Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.~>
 
-Accepting a Critic deletion will delete the entire mark. Rejecting a Critic deletion will undo the tag and return the text to the original state as entered by the author.
+	~~}Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130103_225247.jpg)
+After rendering this example, the deletion and insertion are added to the end of the first paragraph and two newlines ensure the proper paragraph break.
 
-Critic Addition marks work similarly with the function.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla. <del>Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.</del><ins class=”break”>&nbsp;</ins>
 
-*mark_critic*
+	Praesent sagittis, quam id egestas consequat, nisl orci vehicula libero, quis ultricies nulla magna interdum sem. Maecenas eget orci vitae eros accumsan mollis. Cras mi mi, rutrum id aliquam in, aliquet vitae tellus. Sed neque justo, cursus in commodo eget, facilisis eget nunc. Cras tincidunt auctor varius.
 
-This function provides a quick way to wrap the selected text in a Critic Markup tag. A Sublime Text quick panel provides three options:
+#### Comments ####
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130103_225821_std.jpg)
+Critic Markup supports generic comments for metadata. A comment may include a note, time stamp, author initial or similar annotation.
 
-The *mark_critic* method works on multiple selections at once for synchronous marking of multiple words or phrase.
+Comments are added via a set of curly braces and double greater-than/less-than symbols.
 
+	Lorem ipsum dolor sit amet.{>>This is a comment<<}
 
-To bind these functions to keyboard shortcuts, add the following entries to the Sublime Text User Key Bindings:
+The contents of a metadata field should render as `<span class="critic comment">` after the relevant change.
 
-    { "keys": ["ctrl+c"], "command": "list_critics" },
-    { "keys": ["ctrl+a"], "command": "accept_critic" },
-    { "keys": ["ctrl+shift+c"], "command": "list_critics_comments" },
-    { "keys": ["ctrl+m"], "command": "mark_critic" }
+	Lorem ipsum dolor sit amet.<span class=”critic comment”>This is a comment</span>
 
+Metadata may be used however you like, whether as explanations for the changes, time stamps or more. The `<span>` element is for inline content only, so all newlines will be stripped during conversion to HTML.
 
-#### BBEdit Tools ####
+Rules for proper use of the `<span>` element can be found in the [HTML 4 spec](http://www.w3.org/TR/html401/struct/global.html#edef-SPAN).
 
-The BBEdit folder contains one Codeless Language Module and one AppleScript. The language module defines Critic comments as language comments and Critic additions and deletions as functions.
+#### Highlights ####
 
-**Development Note: The BBEdit codeless language module is still under development. Defining additions and deletions has some advantages for scope selection but I'm not particularly happy with the current design. The regex matching for comments is still a bit hit and miss.**
+Highlights may be added as required by an editor or author, and are noted by double curly braces. While a highlight can stand on its own, it's almost always followed by a comment related to the highlighted passage.
 
-The Critic marks can be selected from the function list in BBEdit. Selecting a mark in the list will completely select the string in the editor window.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. {{Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.}}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
 
-![](http://www.macdrifter.com/uploads/2013/01/Screen%20Shot%2020130113_142157.jpg)
+Highlights should be rendered as `<mark>` tags in the processed HTML.
 
-The AppleScript for BBEdit works similarly and can be used without the language module. The "Select Critic Mark" script will open a list selector window with a complete list of all Critic marks in the document. Select a mark and click "Ok" to select the entire mark in the editor window.
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. <mark>Vestibulum at orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget nulla.</mark><span class=”critic metadata”>confusing</span> Mauris massa sem, tempor sed cursus et, semper tincidunt lacus.
 
-Once a mark is selected, it can be accepted or rejected using the System Services described above.
+Rules for proper use of the `<mark>` element can be found in the [HTML 5 spec](http://www.w3.org/html/wg/drafts/html/master/single-page.html#the-mark-element).
 
-#### Keyboard Maestro Macros ####
+### Putting it all together ###
 
-There are three Keyboard Maestro macros to make entering Critic marks easier. If text is selected in an application, the macros will convert them into the corresponding Critic mark. Without text selected, a generic Critic mark will be inserted.
+When used in combination the marks can indicate more complex changes.
 
-------------
+	Don’t go around saying{‐‐ to people that‐‐} the world owes you a living. The world owes you nothing. It was here first. {~~One~>Only one~~} thing is impossible for God: To find {++any++} sense in any copyright law on the planet. {{Truth is stranger than fiction}}{>>true<<}, but it is because Fiction is obliged to stick to possibilities; Truth isn’t.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CriticMarkup</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://criticmarkup.com" property="cc:attributionName" rel="cc:attributionURL">Gabriel Weatherhead and Erik Hess</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://daringfireball.net/projects/markdown/" rel="dct:source">http://daringfireball.net/projects/markdown/</a>.
+The above paragraphs should render to HTML in the following manner.
 
-------------
+	Don’t go around saying<del> to people that</del> the world owes you a living. The world owes you nothing. It was here first. <del>One</del><ins>Only one</ins> thing is impossible for God: To find <ins>any</ins> sense in any copyright law on the planet. <mark>Truth is stranger than fiction</mark><span class=”critic comment”>true</span>, but it is because Fiction is obliged to stick to possibilities; Truth isn’t.
+
+### Caveats ###
+
+There are a few limitations to consider when using CriticMarkup.
+
+#### Avoid Newlines in CriticMarkup ####
+
+Newlines should be avoided as much as possible within CriticMarkup tags. Many of the HTML elements we use are inline elements only. While we've crafted CriticMarkup with as much care as possible, it is possible for you to break the syntax and output invalid HTML if you try hard enough.
+
+#### Wrap Markdown Tags Completely ####
+
+While it may support incomplete Markdown tags in the future, the CriticMarkup processor currently chokes on them. Avoid this:
+
+	I really love *italic {~~fonts*~>font-styles*~~}.
+
+Instead, wrap the asterisks completely:
+
+	I really love {~~*italic fonts*~>*italic font-styles*~~}.
+
+	Copyright 2013 Gabe Weatherhead and Erik Hess
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.

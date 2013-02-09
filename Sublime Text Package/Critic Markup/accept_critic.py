@@ -13,18 +13,22 @@ class AcceptCriticCommand(sublime_plugin.TextCommand):
         caret = []
         add_edit = re.compile(r'(?s)\{\+\+(.*?)\+\+[ \t]*(\[(.*?)\])?[ \t]*\}')
         del_edit = re.compile(r'(?s)\{\-\-(.*?)\-\-[ \t]*(\[(.*?)\])?[ \t]*\}')
+        sub_edit = re.compile(r'''(?s)\{\~\~(?P<original>(?:[^\~\>]|(?:\~(?!\>)))+)\~\>(?P<new>(?:[^\~\~]|(?:\~(?!\~\})))+)\~\~\}''')
         for sel in sels:
             text = self.view.substr(sel)
             # If something is selected...
             if len(text) > 0:
                 a = add_edit.search(text)
                 d = del_edit.search(text)
+                s = sub_edit.search(text)
                 edit = self.view.begin_edit()
                 if choice == 0:
                     if a:
                         self.view.replace(edit, sel, a.group(1))
                     if d:
                         self.view.erase(edit, sel)
+                    if s:
+                        self.view.replace(edit, sel, s.group('new'))
 
                     #if m.group(2)
                     # ... turn the selected text into the link text
@@ -35,6 +39,8 @@ class AcceptCriticCommand(sublime_plugin.TextCommand):
                         self.view.erase(edit, sel)
                     if d:
                         self.view.replace(edit, sel, d.group(1))
+                    if s:
+                        self.view.replace(edit, sel, s.group('original'))
                 self.view.end_edit(edit)                    
 
 
