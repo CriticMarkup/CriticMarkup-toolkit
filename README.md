@@ -161,6 +161,7 @@ Instead, wrap the asterisks completely:
 
 	I really love {~~*italic fonts*~>*italic font-styles*~~}.
 
+---
 
     Copyright 2013 Gabe Weatherhead and Erik Hess
 
