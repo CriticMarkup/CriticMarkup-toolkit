@@ -4,7 +4,7 @@ import re
 class ListCriticsCommentsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.markers = []
-        self.view.find_all(r'''(?s)((\{>>(.*?)<<\})|(\{\{(.*?)\}\}))''', 0, "$1", self.markers)
+        self.view.find_all(r'''(?s)((\{>>(.*?)<<\})|(\{\{(.*?)\}\}\{>>(.*?)<<\}))''', 0, "$1", self.markers)
         self.view.window().show_quick_panel(self.markers, self.goto_critic, sublime.MONOSPACE_FONT)
 
     def goto_critic(self, choice):

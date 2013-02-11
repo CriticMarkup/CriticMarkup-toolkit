@@ -10,13 +10,15 @@ import subprocess
 
 # Output is HTML formated text using ins, del, and aside tags
 
-# File is written to the same directory as the source
+# File is written to the same directory as the source unless specified with the -o flag
 
-# criticHTML.py -m2     Uses the markdown2 module
+# -m2     Uses the markdown2 module
 
-# criticHTML.py -o <file_path>    Writes file to specified path. Must include file name
+# -o <file_path>    Writes file to specified path. Must include file name
+# 
+# -b Opens the output HTML file in the defualt browser
 
-# criticHTML.py -m2 --<file_path>   
+  
 
 add_pattern = r'''(?s)\{\+\+(?P<value>.*?)\+\+[ \t]*(\[(?P<meta>.*?)\])?[ \t]*\}'''
 
@@ -28,9 +30,11 @@ gen_comm_pattern = r'''(?s)\{[ \t]*\[(?P<meta>.*?)\][ \t]*\}'''
 
 subs_pattern = r'''(?s)\{\~\~(?P<original>(?:[^\~\>]|(?:\~(?!\>)))+)\~\>(?P<new>(?:[^\~\~]|(?:\~(?!\~\})))+)\~\~\}'''
 
+mark_pattern = r'''(?s)\{\{(?P<value>.*?)\}\}\{\>\>(?P<comment>.*?)\<\<\}'''
 
 
-mark_pattern = r'''(?s)\{\{(?P<value>.*?)\}\}'''
+# Considered for future standalone highlight without comment
+# mark_pattern = r'''(?s)\{\{(?P<value>.*?)\}\}'''
 
 
 def deletionProcess(group_object):
@@ -82,7 +86,7 @@ def highlightProcess(group_object):
 	
 
 def markProcess(group_object):
-	replaceString = '<mark>' + group_object.group('value') + '</mark>'
+	replaceString = '<mark>' + group_object.group('value') + '</mark><span class="critic comment">' + group_object.group('comment').replace("\n", " ") + '</span>'
 	return replaceString
 
 
@@ -327,9 +331,10 @@ try:
 
 	h = re.sub(add_pattern, additionProcess, h, flags=re.DOTALL)
 
-	h = re.sub(comm_pattern, highlightProcess, h, flags=re.DOTALL)
-
 	h = re.sub(mark_pattern, markProcess, h, flags=re.DOTALL)
+
+	# comment processing must come after highlights
+	h = re.sub(comm_pattern, highlightProcess, h, flags=re.DOTALL)
 
 	h = re.sub(subs_pattern, subsProcess, h, flags=re.DOTALL)
 
@@ -367,13 +372,14 @@ try:
 		print "\nOutput file created:  ", abs_path
 	else:
 		path, filename = os.path.split(args.source)
+		print "Converting >> " + args.source
 		output_file = path+'/'+filename.split(os.extsep, 1)[0]+'_CriticParseOut.html'
 		file = open(output_file, 'w')
 		file.write(h.encode('ascii'))
 		file.close()
 		print "\nOutput file created:  "+ output_file
 
-	if args.view:
+	if (args.browser):
 		try:
 		    retcode = subprocess.call("open " + output_file, shell=True)
 		    if retcode < 0:
