@@ -1,4 +1,14 @@
 #!/usr/bin/python
+
+# Author: Gabriel Weatherhead
+# Date: 2013-02-13
+# Project: CriticMarkup
+# License: Apache 2
+
+# This script is for a future version of Marked.app for Mac. It is a "pre"-processor used before Markdown is
+# converted to HTML.
+
+
 import sys
 import os
 import re
