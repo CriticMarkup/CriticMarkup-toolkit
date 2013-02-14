@@ -1,0 +1,22 @@
+{ "name": "Critic",
+  "scopeName": "source.critic",
+  "fileTypes": ["critic"],
+  "patterns": [
+  	{
+  		"match": "\\{\\+\\+(.*?)\\+\\+[ \\t]*(\\[(.*?)\\])?[ \\t]*\\}",
+  		"name": "string.addition",
+  		"comment": "Editorial Addition"
+  	},
+    {
+      "match": "\\{\\-\\-(.*?)\\-\\-[ \\t]*(\\[(.*?)\\])?[ \\t]*\\}",
+      "name": "string.deletion",
+      "comment": "Editorial Deletion"
+    },
+    {
+      "match": "\\{~~(.*?)~~[ \\t]*(\\[(.*?)\\])?[ \\t]*\\}",
+      "name": "string.comment",
+      "comment": "Editorial Deletion"
+    }
+  ],
+  "uuid": "2a1dd069-4748-4825-bf5f-0bb7d2db26dd"
+}
