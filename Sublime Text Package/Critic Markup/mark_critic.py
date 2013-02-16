@@ -28,7 +28,7 @@ class MarkCritic(sublime_plugin.TextCommand):
             if choice == 3:
                 self.view.replace(edit, sel, "{>>"+text+"<<}")
             if choice == 4:
-                self.view.replace(edit, sel, "{{"+text+"}}")
+                self.view.replace(edit, sel, "{=="+text+"==}")
 
             self.view.end_edit(edit)
             

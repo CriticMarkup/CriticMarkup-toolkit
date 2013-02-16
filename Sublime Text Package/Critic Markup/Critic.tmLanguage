@@ -38,7 +38,7 @@
 			<key>highlight</key>
 			<string>Editorial Highlight</string>
 			<key>match</key>
-			<string>\{\{(.*?)[ \t]*(\[(.*?)\])?[ \t]*\}\}</string>
+			<string>\{\=\=(.*?)[ \t]*(\[(.*?)\])?[ \t]*\=\=\}</string>
 			<key>name</key>
 			<string>string.highlight</string>
 		</dict>

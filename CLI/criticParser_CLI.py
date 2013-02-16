@@ -1,11 +1,10 @@
 #!/usr/bin/python
 
-# Author: Gabriel Weatherhead
-# Date: 2013-02-13
-# Project: CriticMarkup
-# License: Apache 2
-
-# Command line script. Execute 'python criticParser_CLI.py -h' from the command line for more help.
+import sys
+import os
+import re
+import argparse
+import subprocess
 
 # Input is quoted UNIX type file path.
 
@@ -19,13 +18,7 @@
 # 
 # -b Opens the output HTML file in the defualt browser
 
-
-import sys
-import os
-import re
-import argparse
-import subprocess
-
+  
 
 add_pattern = r'''(?s)\{\+\+(?P<value>.*?)\+\+[ \t]*(\[(?P<meta>.*?)\])?[ \t]*\}'''
 
@@ -37,7 +30,7 @@ gen_comm_pattern = r'''(?s)\{[ \t]*\[(?P<meta>.*?)\][ \t]*\}'''
 
 subs_pattern = r'''(?s)\{\~\~(?P<original>(?:[^\~\>]|(?:\~(?!\>)))+)\~\>(?P<new>(?:[^\~\~]|(?:\~(?!\~\})))+)\~\~\}'''
 
-mark_pattern = r'''(?s)\{\{(?P<value>.*?)\}\}\{\>\>(?P<comment>.*?)\<\<\}'''
+mark_pattern = r'''(?s)\{\=\=(?P<value>.*?)\=\=\}\{\>\>(?P<comment>.*?)\<\<\}'''
 
 
 # Considered for future standalone highlight without comment

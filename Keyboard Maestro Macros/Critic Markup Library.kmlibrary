@@ -13,212 +13,80 @@
 	<key>Category2</key>
 	<string></string>
 	<key>Description</key>
-	<string>Macro Library for use with Critic Markup</string>
+	<string></string>
 	<key>Items</key>
 	<array>
 		<dict>
 			<key>Activate</key>
-			<string>OnceWithPalette</string>
-			<key>AddToMacroPalette</key>
-			<false/>
-			<key>AddToStatusMenu</key>
-			<true/>
+			<string>Normal</string>
 			<key>IsActive</key>
 			<true/>
-			<key>KeyCode</key>
-			<integer>15</integer>
 			<key>Macros</key>
 			<array>
 				<dict>
 					<key>Actions</key>
 					<array>
 						<dict>
-							<key>Conditions</key>
-							<dict>
-								<key>ConditionList</key>
-								<array>
-									<dict>
-										<key>ConditionType</key>
-										<string>Menu</string>
-										<key>MenuConditionSelectionType</key>
-										<string>Is</string>
-										<key>MenuConditionType</key>
-										<string>IsEnabled</string>
-										<key>MenuTitle</key>
-										<string>Cut</string>
-									</dict>
-								</array>
-								<key>ConditionListMatch</key>
-								<string>All</string>
-							</dict>
-							<key>ElseActions</key>
-							<array/>
+							<key>Action</key>
+							<string>ByPasting</string>
 							<key>IsActive</key>
 							<true/>
 							<key>IsDisclosed</key>
 							<true/>
 							<key>MacroActionType</key>
-							<string>IfThenElse</string>
-							<key>ThenActions</key>
-							<array>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>7</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>256</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>SetVariableToText</string>
-									<key>Text</key>
-									<string>%CurrentClipboard%</string>
-									<key>Variable</key>
-									<string>temp</string>
-								</dict>
-								<dict>
-									<key>Conditions</key>
-									<dict>
-										<key>ConditionList</key>
-										<array>
-											<dict>
-												<key>ConditionType</key>
-												<string>Variable</string>
-												<key>Variable</key>
-												<string>temp</string>
-												<key>VariableConditionType</key>
-												<string>Contains</string>
-												<key>VariableValue</key>
-												<string>{++</string>
-											</dict>
-										</array>
-										<key>ConditionListMatch</key>
-										<string>All</string>
-									</dict>
-									<key>ElseActions</key>
-									<array>
-										<dict>
-											<key>Conditions</key>
-											<dict>
-												<key>ConditionList</key>
-												<array>
-													<dict>
-														<key>ConditionType</key>
-														<string>Variable</string>
-														<key>Variable</key>
-														<string>temp</string>
-														<key>VariableConditionType</key>
-														<string>Contains</string>
-														<key>VariableValue</key>
-														<string>{--</string>
-													</dict>
-												</array>
-												<key>ConditionListMatch</key>
-												<string>All</string>
-											</dict>
-											<key>ElseActions</key>
-											<array/>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>IfThenElse</string>
-											<key>ThenActions</key>
-											<array>
-												<dict>
-													<key>Action</key>
-													<string>CancelThisMacro</string>
-													<key>IsActive</key>
-													<true/>
-													<key>IsDisclosed</key>
-													<true/>
-													<key>MacroActionType</key>
-													<string>Cancel</string>
-												</dict>
-											</array>
-											<key>TimeOutAbortsMacro</key>
-											<true/>
-										</dict>
-									</array>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>IfThenElse</string>
-									<key>ThenActions</key>
-									<array>
-										<dict>
-											<key>Action</key>
-											<string>IgnoreCaseString</string>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>SearchReplaceVariable</string>
-											<key>Replace</key>
-											<string></string>
-											<key>Search</key>
-											<string>{++</string>
-											<key>Variable</key>
-											<string>temp</string>
-										</dict>
-										<dict>
-											<key>Action</key>
-											<string>IgnoreCaseString</string>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>SearchReplaceVariable</string>
-											<key>Replace</key>
-											<string></string>
-											<key>Search</key>
-											<string>++}</string>
-											<key>Variable</key>
-											<string>temp</string>
-										</dict>
-										<dict>
-											<key>Action</key>
-											<string>ByPasting</string>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>InsertText</string>
-											<key>Paste</key>
-											<true/>
-											<key>Text</key>
-											<string>%Variable%temp%</string>
-										</dict>
-									</array>
-									<key>TimeOutAbortsMacro</key>
-									<true/>
-								</dict>
-							</array>
-							<key>TimeOutAbortsMacro</key>
+							<string>InsertText</string>
+							<key>Paste</key>
 							<true/>
+							<key>Text</key>
+							<string>{++++}</string>
+						</dict>
+						<dict>
+							<key>IsActive</key>
+							<true/>
+							<key>IsDisclosed</key>
+							<true/>
+							<key>KeyCode</key>
+							<integer>123</integer>
+							<key>MacroActionType</key>
+							<string>SimulateKeystroke</string>
+							<key>Modifiers</key>
+							<integer>0</integer>
+							<key>ReleaseAll</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>IsActive</key>
+							<true/>
+							<key>IsDisclosed</key>
+							<true/>
+							<key>KeyCode</key>
+							<integer>123</integer>
+							<key>MacroActionType</key>
+							<string>SimulateKeystroke</string>
+							<key>Modifiers</key>
+							<integer>0</integer>
+							<key>ReleaseAll</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>IsActive</key>
+							<true/>
+							<key>IsDisclosed</key>
+							<true/>
+							<key>KeyCode</key>
+							<integer>123</integer>
+							<key>MacroActionType</key>
+							<string>SimulateKeystroke</string>
+							<key>Modifiers</key>
+							<integer>0</integer>
+							<key>ReleaseAll</key>
+							<false/>
 						</dict>
 					</array>
 					<key>IsActive</key>
 					<true/>
 					<key>Name</key>
-					<string>cmd a. Accept Critic</string>
+					<string>Critic Addition</string>
 					<key>Triggers</key>
 					<array>
 						<dict>
@@ -229,579 +97,91 @@
 							<key>MacroTriggerType</key>
 							<string>HotKey</string>
 							<key>Modifiers</key>
-							<integer>256</integer>
+							<integer>6912</integer>
 							<key>TriggerRepeat</key>
 							<false/>
 						</dict>
 					</array>
 					<key>UID</key>
-					<string>1AA0F811-664A-4814-A19A-A1C51728FE0C</string>
+					<string>0963401A-CCA1-4087-AD90-A24CF5CD2AB7</string>
 				</dict>
 			</array>
-			<key>Modifiers</key>
-			<integer>2304</integer>
 			<key>Name</key>
-			<string>Hot Palette - Critic Palette (opt-cmd-R)</string>
+			<string>Critic</string>
 			<key>UID</key>
-			<string>C43D8983-8376-4B7C-8E9B-0A0E29B98C3E</string>
+			<string>E41008BC-0D31-45D2-911F-32D6A9DD038C</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
-			<string>OnceWithPalette</string>
-			<key>AddToMacroPalette</key>
-			<false/>
-			<key>AddToStatusMenu</key>
-			<true/>
+			<string>Normal</string>
 			<key>IsActive</key>
 			<true/>
-			<key>KeyCode</key>
-			<integer>15</integer>
 			<key>Macros</key>
 			<array>
 				<dict>
 					<key>Actions</key>
 					<array>
 						<dict>
-							<key>Conditions</key>
-							<dict>
-								<key>ConditionList</key>
-								<array>
-									<dict>
-										<key>ConditionType</key>
-										<string>Menu</string>
-										<key>MenuConditionSelectionType</key>
-										<string>Is</string>
-										<key>MenuConditionType</key>
-										<string>IsEnabled</string>
-										<key>MenuTitle</key>
-										<string>Cut</string>
-									</dict>
-								</array>
-								<key>ConditionListMatch</key>
-								<string>All</string>
-							</dict>
-							<key>ElseActions</key>
-							<array/>
+							<key>Action</key>
+							<string>ByPasting</string>
 							<key>IsActive</key>
 							<true/>
 							<key>IsDisclosed</key>
 							<true/>
 							<key>MacroActionType</key>
-							<string>IfThenElse</string>
-							<key>ThenActions</key>
-							<array>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>7</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>256</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>SetVariableToText</string>
-									<key>Text</key>
-									<string>%CurrentClipboard%</string>
-									<key>Variable</key>
-									<string>temp</string>
-								</dict>
-								<dict>
-									<key>Conditions</key>
-									<dict>
-										<key>ConditionList</key>
-										<array>
-											<dict>
-												<key>ConditionType</key>
-												<string>Variable</string>
-												<key>Variable</key>
-												<string>temp</string>
-												<key>VariableConditionType</key>
-												<string>Contains</string>
-												<key>VariableValue</key>
-												<string>{--</string>
-											</dict>
-										</array>
-										<key>ConditionListMatch</key>
-										<string>All</string>
-									</dict>
-									<key>ElseActions</key>
-									<array>
-										<dict>
-											<key>Conditions</key>
-											<dict>
-												<key>ConditionList</key>
-												<array>
-													<dict>
-														<key>ConditionType</key>
-														<string>Variable</string>
-														<key>Variable</key>
-														<string>temp</string>
-														<key>VariableConditionType</key>
-														<string>Contains</string>
-														<key>VariableValue</key>
-														<string>{++</string>
-													</dict>
-												</array>
-												<key>ConditionListMatch</key>
-												<string>All</string>
-											</dict>
-											<key>ElseActions</key>
-											<array/>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>IfThenElse</string>
-											<key>ThenActions</key>
-											<array>
-												<dict>
-													<key>Action</key>
-													<string>CancelThisMacro</string>
-													<key>IsActive</key>
-													<true/>
-													<key>IsDisclosed</key>
-													<true/>
-													<key>MacroActionType</key>
-													<string>Cancel</string>
-												</dict>
-											</array>
-											<key>TimeOutAbortsMacro</key>
-											<true/>
-										</dict>
-									</array>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>IfThenElse</string>
-									<key>ThenActions</key>
-									<array>
-										<dict>
-											<key>Action</key>
-											<string>IgnoreCaseString</string>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>SearchReplaceVariable</string>
-											<key>Replace</key>
-											<string></string>
-											<key>Search</key>
-											<string>{--</string>
-											<key>Variable</key>
-											<string>temp</string>
-										</dict>
-										<dict>
-											<key>Action</key>
-											<string>IgnoreCaseString</string>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>SearchReplaceVariable</string>
-											<key>Replace</key>
-											<string></string>
-											<key>Search</key>
-											<string>--}</string>
-											<key>Variable</key>
-											<string>temp</string>
-										</dict>
-										<dict>
-											<key>Action</key>
-											<string>ByPasting</string>
-											<key>IsActive</key>
-											<true/>
-											<key>IsDisclosed</key>
-											<true/>
-											<key>MacroActionType</key>
-											<string>InsertText</string>
-											<key>Paste</key>
-											<true/>
-											<key>Text</key>
-											<string>%Variable%temp%</string>
-										</dict>
-									</array>
-									<key>TimeOutAbortsMacro</key>
-									<true/>
-								</dict>
-							</array>
-							<key>TimeOutAbortsMacro</key>
+							<string>InsertText</string>
+							<key>Paste</key>
 							<true/>
+							<key>Text</key>
+							<string>{&gt;&gt;&lt;&lt;}</string>
 						</dict>
-					</array>
-					<key>IsActive</key>
-					<true/>
-					<key>Name</key>
-					<string>cmd R. Reject Critic</string>
-					<key>Triggers</key>
-					<array>
 						<dict>
-							<key>FireType</key>
-							<string>Pressed</string>
+							<key>IsActive</key>
+							<true/>
+							<key>IsDisclosed</key>
+							<true/>
 							<key>KeyCode</key>
-							<integer>15</integer>
-							<key>MacroTriggerType</key>
-							<string>HotKey</string>
+							<integer>123</integer>
+							<key>MacroActionType</key>
+							<string>SimulateKeystroke</string>
 							<key>Modifiers</key>
-							<integer>256</integer>
-							<key>TriggerRepeat</key>
-							<false/>
-						</dict>
-					</array>
-					<key>UID</key>
-					<string>AE35E788-5469-41F5-AC7C-D84D15514CF9</string>
-				</dict>
-			</array>
-			<key>Modifiers</key>
-			<integer>2304</integer>
-			<key>Name</key>
-			<string>Hot Palette - Critic Palette (opt-cmd-R)</string>
-			<key>UID</key>
-			<string>C43D8983-8376-4B7C-8E9B-0A0E29B98C3E</string>
-		</dict>
-		<dict>
-			<key>Activate</key>
-			<string>OnceWithPalette</string>
-			<key>AddToMacroPalette</key>
-			<false/>
-			<key>AddToStatusMenu</key>
-			<true/>
-			<key>IsActive</key>
-			<true/>
-			<key>KeyCode</key>
-			<integer>15</integer>
-			<key>Macros</key>
-			<array>
-				<dict>
-					<key>Actions</key>
-					<array>
-						<dict>
-							<key>Conditions</key>
-							<dict>
-								<key>ConditionList</key>
-								<array>
-									<dict>
-										<key>ConditionType</key>
-										<string>Menu</string>
-										<key>MenuConditionSelectionType</key>
-										<string>Is</string>
-										<key>MenuConditionType</key>
-										<string>IsEnabled</string>
-										<key>MenuTitle</key>
-										<string>Cut</string>
-									</dict>
-								</array>
-								<key>ConditionListMatch</key>
-								<string>All</string>
-							</dict>
-							<key>ElseActions</key>
-							<array>
-								<dict>
-									<key>Action</key>
-									<string>ByPasting</string>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>InsertText</string>
-									<key>Paste</key>
-									<true/>
-									<key>Text</key>
-									<string>{++++}</string>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>123</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>0</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>123</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>0</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>123</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>0</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-							</array>
-							<key>IsActive</key>
-							<true/>
-							<key>IsDisclosed</key>
-							<true/>
-							<key>MacroActionType</key>
-							<string>IfThenElse</string>
-							<key>ThenActions</key>
-							<array>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>7</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>256</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>SetVariableToText</string>
-									<key>Text</key>
-									<string>{++%CurrentClipboard%++}</string>
-									<key>Variable</key>
-									<string>temp</string>
-								</dict>
-								<dict>
-									<key>Action</key>
-									<string>ByPasting</string>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>InsertText</string>
-									<key>Paste</key>
-									<true/>
-									<key>Text</key>
-									<string>%Variable%temp%</string>
-								</dict>
-							</array>
-							<key>TimeOutAbortsMacro</key>
-							<true/>
-						</dict>
-					</array>
-					<key>IsActive</key>
-					<true/>
-					<key>Name</key>
-					<string>Opt A. Critic Addition</string>
-					<key>Triggers</key>
-					<array>
-						<dict>
-							<key>FireType</key>
-							<string>Pressed</string>
-							<key>KeyCode</key>
 							<integer>0</integer>
-							<key>MacroTriggerType</key>
-							<string>HotKey</string>
-							<key>Modifiers</key>
-							<integer>2048</integer>
-							<key>TriggerRepeat</key>
+							<key>ReleaseAll</key>
 							<false/>
 						</dict>
-					</array>
-					<key>UID</key>
-					<string>11F65D9F-44E9-485B-9BBD-70D4C761C642</string>
-				</dict>
-			</array>
-			<key>Modifiers</key>
-			<integer>2304</integer>
-			<key>Name</key>
-			<string>Hot Palette - Critic Palette (opt-cmd-R)</string>
-			<key>UID</key>
-			<string>C43D8983-8376-4B7C-8E9B-0A0E29B98C3E</string>
-		</dict>
-		<dict>
-			<key>Activate</key>
-			<string>OnceWithPalette</string>
-			<key>AddToMacroPalette</key>
-			<false/>
-			<key>AddToStatusMenu</key>
-			<true/>
-			<key>IsActive</key>
-			<true/>
-			<key>KeyCode</key>
-			<integer>15</integer>
-			<key>Macros</key>
-			<array>
-				<dict>
-					<key>Actions</key>
-					<array>
 						<dict>
-							<key>Conditions</key>
-							<dict>
-								<key>ConditionList</key>
-								<array>
-									<dict>
-										<key>ConditionType</key>
-										<string>Menu</string>
-										<key>MenuConditionSelectionType</key>
-										<string>Is</string>
-										<key>MenuConditionType</key>
-										<string>IsEnabled</string>
-										<key>MenuTitle</key>
-										<string>Cut</string>
-									</dict>
-								</array>
-								<key>ConditionListMatch</key>
-								<string>All</string>
-							</dict>
-							<key>ElseActions</key>
-							<array>
-								<dict>
-									<key>Action</key>
-									<string>ByPasting</string>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>InsertText</string>
-									<key>Paste</key>
-									<true/>
-									<key>Text</key>
-									<string>{~~~~}</string>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>123</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>0</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>123</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>0</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>123</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>0</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-							</array>
 							<key>IsActive</key>
 							<true/>
 							<key>IsDisclosed</key>
 							<true/>
+							<key>KeyCode</key>
+							<integer>123</integer>
 							<key>MacroActionType</key>
-							<string>IfThenElse</string>
-							<key>ThenActions</key>
-							<array>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>KeyCode</key>
-									<integer>7</integer>
-									<key>MacroActionType</key>
-									<string>SimulateKeystroke</string>
-									<key>Modifiers</key>
-									<integer>256</integer>
-									<key>ReleaseAll</key>
-									<false/>
-								</dict>
-								<dict>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>SetVariableToText</string>
-									<key>Text</key>
-									<string>{~~%CurrentClipboard%~~}</string>
-									<key>Variable</key>
-									<string>temp</string>
-								</dict>
-								<dict>
-									<key>Action</key>
-									<string>ByPasting</string>
-									<key>IsActive</key>
-									<true/>
-									<key>IsDisclosed</key>
-									<true/>
-									<key>MacroActionType</key>
-									<string>InsertText</string>
-									<key>Paste</key>
-									<true/>
-									<key>Text</key>
-									<string>%Variable%temp%</string>
-								</dict>
-							</array>
-							<key>TimeOutAbortsMacro</key>
+							<string>SimulateKeystroke</string>
+							<key>Modifiers</key>
+							<integer>0</integer>
+							<key>ReleaseAll</key>
+							<false/>
+						</dict>
+						<dict>
+							<key>IsActive</key>
 							<true/>
+							<key>IsDisclosed</key>
+							<true/>
+							<key>KeyCode</key>
+							<integer>123</integer>
+							<key>MacroActionType</key>
+							<string>SimulateKeystroke</string>
+							<key>Modifiers</key>
+							<integer>0</integer>
+							<key>ReleaseAll</key>
+							<false/>
 						</dict>
 					</array>
 					<key>IsActive</key>
 					<true/>
 					<key>Name</key>
-					<string>Opt C. Critic Comment</string>
+					<string>Critic Comment</string>
 					<key>Triggers</key>
 					<array>
 						<dict>
@@ -812,33 +192,25 @@
 							<key>MacroTriggerType</key>
 							<string>HotKey</string>
 							<key>Modifiers</key>
-							<integer>2048</integer>
+							<integer>6912</integer>
 							<key>TriggerRepeat</key>
 							<false/>
 						</dict>
 					</array>
 					<key>UID</key>
-					<string>D30C1871-14F8-421E-8267-CC4058A30CBB</string>
+					<string>6442D281-DF0A-4316-B883-AE6500FA8A72</string>
 				</dict>
 			</array>
-			<key>Modifiers</key>
-			<integer>2304</integer>
 			<key>Name</key>
-			<string>Hot Palette - Critic Palette (opt-cmd-R)</string>
+			<string>Critic</string>
 			<key>UID</key>
-			<string>C43D8983-8376-4B7C-8E9B-0A0E29B98C3E</string>
+			<string>E41008BC-0D31-45D2-911F-32D6A9DD038C</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
-			<string>OnceWithPalette</string>
-			<key>AddToMacroPalette</key>
-			<false/>
-			<key>AddToStatusMenu</key>
-			<true/>
+			<string>Normal</string>
 			<key>IsActive</key>
 			<true/>
-			<key>KeyCode</key>
-			<integer>15</integer>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -978,7 +350,7 @@
 					<key>IsActive</key>
 					<true/>
 					<key>Name</key>
-					<string>Opt D. Critic Delete</string>
+					<string>Critic Delete</string>
 					<key>Triggers</key>
 					<array>
 						<dict>
@@ -989,33 +361,25 @@
 							<key>MacroTriggerType</key>
 							<string>HotKey</string>
 							<key>Modifiers</key>
-							<integer>2048</integer>
+							<integer>6912</integer>
 							<key>TriggerRepeat</key>
 							<false/>
 						</dict>
 					</array>
 					<key>UID</key>
-					<string>81FEC355-38D2-4C82-A5C6-88450ED83A57</string>
+					<string>10C29925-FC2E-495D-AA52-9A4B50459D57</string>
 				</dict>
 			</array>
-			<key>Modifiers</key>
-			<integer>2304</integer>
 			<key>Name</key>
-			<string>Hot Palette - Critic Palette (opt-cmd-R)</string>
+			<string>Critic</string>
 			<key>UID</key>
-			<string>C43D8983-8376-4B7C-8E9B-0A0E29B98C3E</string>
+			<string>E41008BC-0D31-45D2-911F-32D6A9DD038C</string>
 		</dict>
 		<dict>
 			<key>Activate</key>
-			<string>OnceWithPalette</string>
-			<key>AddToMacroPalette</key>
-			<false/>
-			<key>AddToStatusMenu</key>
-			<true/>
+			<string>Normal</string>
 			<key>IsActive</key>
 			<true/>
-			<key>KeyCode</key>
-			<integer>15</integer>
 			<key>Macros</key>
 			<array>
 				<dict>
@@ -1054,7 +418,21 @@
 									<key>Paste</key>
 									<true/>
 									<key>Text</key>
-									<string>{{}}</string>
+									<string>{====}{&gt;&gt;&lt;&lt;}</string>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
 								</dict>
 								<dict>
 									<key>IsActive</key>
@@ -1115,7 +493,7 @@
 									<key>MacroActionType</key>
 									<string>SetVariableToText</string>
 									<key>Text</key>
-									<string>{{%CurrentClipboard%}}</string>
+									<string>{==%CurrentClipboard%==}{&gt;&gt;&lt;&lt;}</string>
 									<key>Variable</key>
 									<string>temp</string>
 								</dict>
@@ -1141,7 +519,7 @@
 					<key>IsActive</key>
 					<true/>
 					<key>Name</key>
-					<string>Opt h. Critic Highlight</string>
+					<string>Critic Highlight</string>
 					<key>Triggers</key>
 					<array>
 						<dict>
@@ -1152,24 +530,233 @@
 							<key>MacroTriggerType</key>
 							<string>HotKey</string>
 							<key>Modifiers</key>
-							<integer>2048</integer>
+							<integer>6912</integer>
 							<key>TriggerRepeat</key>
 							<false/>
 						</dict>
 					</array>
 					<key>UID</key>
-					<string>76E56BA7-8D93-4DCF-B599-06BF9EF9D4CD</string>
+					<string>F2CA7EAE-FDD8-4CB3-8E35-939BAA74058F</string>
 				</dict>
 			</array>
-			<key>Modifiers</key>
-			<integer>2304</integer>
 			<key>Name</key>
-			<string>Hot Palette - Critic Palette (opt-cmd-R)</string>
+			<string>Critic</string>
 			<key>UID</key>
-			<string>C43D8983-8376-4B7C-8E9B-0A0E29B98C3E</string>
+			<string>E41008BC-0D31-45D2-911F-32D6A9DD038C</string>
+		</dict>
+		<dict>
+			<key>Activate</key>
+			<string>Normal</string>
+			<key>IsActive</key>
+			<true/>
+			<key>Macros</key>
+			<array>
+				<dict>
+					<key>Actions</key>
+					<array>
+						<dict>
+							<key>Conditions</key>
+							<dict>
+								<key>ConditionList</key>
+								<array>
+									<dict>
+										<key>ConditionType</key>
+										<string>Menu</string>
+										<key>MenuConditionSelectionType</key>
+										<string>Is</string>
+										<key>MenuConditionType</key>
+										<string>IsEnabled</string>
+										<key>MenuTitle</key>
+										<string>Cut</string>
+									</dict>
+								</array>
+								<key>ConditionListMatch</key>
+								<string>All</string>
+							</dict>
+							<key>ElseActions</key>
+							<array>
+								<dict>
+									<key>Action</key>
+									<string>ByPasting</string>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>MacroActionType</key>
+									<string>InsertText</string>
+									<key>Paste</key>
+									<true/>
+									<key>Text</key>
+									<string>{~~ ~&gt; ~~}</string>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+							</array>
+							<key>IsActive</key>
+							<true/>
+							<key>IsDisclosed</key>
+							<true/>
+							<key>MacroActionType</key>
+							<string>IfThenElse</string>
+							<key>ThenActions</key>
+							<array>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>7</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>256</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>MacroActionType</key>
+									<string>SetVariableToText</string>
+									<key>Text</key>
+									<string>{~~%CurrentClipboard%~&gt;~~}</string>
+									<key>Variable</key>
+									<string>temp</string>
+								</dict>
+								<dict>
+									<key>Action</key>
+									<string>ByPasting</string>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>MacroActionType</key>
+									<string>InsertText</string>
+									<key>Paste</key>
+									<true/>
+									<key>Text</key>
+									<string>%Variable%temp%</string>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+								<dict>
+									<key>IsActive</key>
+									<true/>
+									<key>IsDisclosed</key>
+									<true/>
+									<key>KeyCode</key>
+									<integer>123</integer>
+									<key>MacroActionType</key>
+									<string>SimulateKeystroke</string>
+									<key>Modifiers</key>
+									<integer>0</integer>
+									<key>ReleaseAll</key>
+									<false/>
+								</dict>
+							</array>
+							<key>TimeOutAbortsMacro</key>
+							<true/>
+						</dict>
+					</array>
+					<key>IsActive</key>
+					<true/>
+					<key>Name</key>
+					<string>Critic Substitute</string>
+					<key>Triggers</key>
+					<array>
+						<dict>
+							<key>FireType</key>
+							<string>Pressed</string>
+							<key>KeyCode</key>
+							<integer>1</integer>
+							<key>MacroTriggerType</key>
+							<string>HotKey</string>
+							<key>Modifiers</key>
+							<integer>6912</integer>
+							<key>TriggerRepeat</key>
+							<false/>
+						</dict>
+					</array>
+					<key>UID</key>
+					<string>C64DC72C-9727-4E65-AAB5-663E9A03EEEC</string>
+				</dict>
+			</array>
+			<key>Name</key>
+			<string>Critic</string>
+			<key>UID</key>
+			<string>E41008BC-0D31-45D2-911F-32D6A9DD038C</string>
 		</dict>
 	</array>
 	<key>UID</key>
-	<string>C5B0E9CA-9D21-433E-B57D-2151951597DD</string>
+	<string>5AC79290-A070-437A-9444-E94416BC1FCD</string>
 </dict>
 </plist>

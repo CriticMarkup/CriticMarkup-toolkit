@@ -31,7 +31,7 @@ There are five types of Critic marks:
 * Deletion `{-- --}`
 * Substitution `{~~ ~> ~~}`
 * Comment `{>> <<}`
-* Highlight `{{ }}`
+* Highlight `{== ==}{>> <<}`
 
 Using these five basic marks you can successfully copy edit in plain text.
 
@@ -161,11 +161,11 @@ Rules for proper use of the `<span>` element can be found in the [HTML 4 spec](h
 
 #### Highlights ####
 
-Highlights may be added as required by an editor or author, and are noted by double curly braces. While a highlight can stand on its own, it's almost always followed by a comment related to the highlighted passage.
+Highlights may be added as required by an editor or author, and are noted by curly braces and double equal signs. While a highlight can be used on it's own, we recommend that it always be followed by a comment related to the highlighted passage.
 
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. {{Vestibulum at
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. {==Vestibulum at
 	orci magna. Phasellus augue justo, sodales eu pulvinar ac, vulputate eget
-	nulla.}}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper
+	nulla.==}{>>confusing<<} Mauris massa sem, tempor sed cursus et, semper
 	tincidunt lacus.
 
 Highlights should be rendered as `<mark>` tags in the processed HTML.
@@ -184,7 +184,7 @@ When used in combination the marks can indicate more complex changes.
 	Don’t go around saying{‐‐ to people that‐‐} the world owes you a living. The
 	world owes you nothing. It was here first. {~~One~>Only one~~} thing is
 	impossible for God: To find {++any++} sense in any copyright law on the
-	planet. {{Truth is stranger than fiction}}{>>true<<}, but it is because
+	planet. {==Truth is stranger than fiction==}{>>true<<}, but it is because
 	Fiction is obliged to stick to possibilities; Truth isn’t.
 
 The above paragraphs should render to HTML in the following manner.

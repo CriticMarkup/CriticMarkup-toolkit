@@ -1,14 +1,4 @@
 #!/usr/bin/python
-
-# Author: Gabriel Weatherhead
-# Date: 2013-02-13
-# Project: CriticMarkup
-# License: Apache 2
-
-# This script is for a future version of Marked.app for Mac. It is a "pre"-processor used before Markdown is
-# converted to HTML.
-
-
 import sys
 import os
 import re
@@ -27,7 +17,7 @@ subs_pattern = r'''(?s)\{\~\~(?P<original>(?:[^\~\>]|(?:\~(?!\>)))+)\~\>(?P<new>
 
 
 
-mark_pattern = r'''(?s)\{\{(?P<value>.*?)\}\}'''
+mark_pattern = r'''(?s)\{\=\=(?P<value>.*?)\=\=\}'''
 
 
 test_pattern = '''{~~Eighty-seven~>Four score and seven~~} years ago our fathers brought forth on this continent a new {~~state~>nation~~}, conceived in liberty, and dedicated to the proposition that all men {--and women--}{>>Tackle this after the war<<} are created equal.'''
