@@ -1,1 +1,1 @@
-{~~ #selection# ~> #PLACEHOLDERSTART#substitution#PLACEHOLDEREND# ~~}
+{~~ #selection# ~> #SELSTART##SELECT##SELEND# ~~}
