@@ -1,5 +1,6 @@
-#!/usr/bin/python
+#!/opt/local/bin/python
 
+import codecs
 import sys
 import os
 import re
@@ -375,7 +376,7 @@ try:
 		print "Converting >> " + args.source
 		output_file = path+'/'+filename.split(os.extsep, 1)[0]+'_CriticParseOut.html'
 		file = open(output_file, 'w')
-		file.write(h.encode('ascii'))
+		file.write(h.encode('utf-8'))
 		file.close()
 		print "\nOutput file created:  "+ output_file
 
