@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Blocked Apps</key>
+  <array>
+  	<key>Name</key>
+		<string>com.apple.Safari</string>
+		<key>Name</key>
+		<string>com.google.Chrome</string>
+		<key>Name</key>
+		<string>org.mozilla.firefox</string>
+		</array>
+<key>Actions</key>
+<array>
+<dict>  
+	<key>Image File</key>
+	<string>add.png</string>
+	<key>Script Interpreter</key>
+	<string>/opt/local/bin/php</string>
+	<key>Shell Script File</key>
+	<string>dodaj.php</string>
+	<key>After</key>
+	<string>paste-result</string>
+	<key>Title</key>
+	<string>Addition</string>
+</dict>
+<dict>
+	<key>Image File</key>
+	<string>delete.png</string>
+	<key>Script Interpreter</key>
+	<string>/opt/local/bin/php</string>
+	<key>Shell Script File</key>
+	<string>usun.php</string>
+	<key>After</key>
+	<string>paste-result</string>
+	<key>Title</key>
+	<string>Deletion</string>
+</dict>
+<dict>
+	<key>Image File</key>
+	<string>zaznacz.png</string>
+	<key>Script Interpreter</key>
+	<string>/opt/local/bin/php</string>
+	<key>Shell Script File</key>
+	<string>komentuj.php</string>
+	<key>After</key>
+	<string>paste-result</string>
+	<key>Title</key>
+	<string>Highlght+Comment</string>
+</dict>
+<dict>
+	<key>Image File</key>
+	<string>podstaw.png</string>
+	<key>Script Interpreter</key>
+	<string>/opt/local/bin/php</string>
+	<key>Shell Script File</key>
+	<string>podstaw.php</string>
+	<key>After</key>
+	<string>paste-result</string>
+	<key>Title</key>
+	<string>Substitution</string>
+	
+</dict>
+<dict>
+	<key>Title</key>
+	<string>ACM</string>
+	<key>Service Name</key>
+	<string>Accept Critic Mark</string>
+</dict>
+<dict>                
+	<key>Title</key>
+	<string>RCM</string>
+	<key>Service Name</key>
+	<string>Reject Critic Mark</string>	
+	</dict>
+</array>
+<key>Credits</key>
+<array>
+	<dict>
+		<key>Name</key>
+		<string>Sebastian Szwarc</string>
+	</dict>
+</array>
+<key>Extension Identifier</key>
+<string>com.sebaszwarc.criticmarks</string>
+<key>Extension Name</key>
+<string>Critic Marks</string>
+<key>Extension Image File</key>
+<string>quotes.png</string>
+<key>Required Software Version</key>
+<integer>701</integer>
+</dict>
+</plist> 
