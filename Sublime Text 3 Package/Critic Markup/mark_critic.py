@@ -2,7 +2,7 @@ import sublime, sublime_plugin
 
 class MarkCriticCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        self.options = ['Deletion', 'Addition', 'Substitution', 'Comment', "highlight"]
+        self.options = ['Deletion', 'Addition', 'Substitution', 'Comment', "Highlight"]
         # Need to find scope limits then do regex find within current scope
         self.view.window().show_quick_panel(self.options, self.process_critic_mark, sublime.MONOSPACE_FONT)
 
@@ -33,5 +33,5 @@ class MarkCriticCommand(sublime_plugin.TextCommand):
                 # self.view.replace(edit, sel, "{>>"+text+"<<}")
                 edit = self.view.run_command("critic_replace", {"a": sel.a, "b": sel.b, "txt": "{>>" + text + "<<}"})
             if choice == 4:
-                # self.view.replace(edit, sel, "{{"+text+"}}")
-                edit = self.view.run_command("critic_replace", {"a": sel.a, "b": sel.b, "txt": "{{" + text + "}}"})
+                # self.view.replace(edit, sel, "{=="+text+"==}")
+                edit = self.view.run_command("critic_replace", {"a": sel.a, "b": sel.b, "txt": "{==" + text + "==}"})
