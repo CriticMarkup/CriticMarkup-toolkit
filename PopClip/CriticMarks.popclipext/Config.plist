@@ -17,7 +17,7 @@
 	<key>Image File</key>
 	<string>add.png</string>
 	<key>Script Interpreter</key>
-	<string>/opt/local/bin/php</string>
+	<string>/usr/bin/env php</string>
 	<key>Shell Script File</key>
 	<string>dodaj.php</string>
 	<key>After</key>
@@ -29,7 +29,7 @@
 	<key>Image File</key>
 	<string>delete.png</string>
 	<key>Script Interpreter</key>
-	<string>/opt/local/bin/php</string>
+	<string>/usr/bin/env php</string>
 	<key>Shell Script File</key>
 	<string>usun.php</string>
 	<key>After</key>
@@ -41,7 +41,7 @@
 	<key>Image File</key>
 	<string>zaznacz.png</string>
 	<key>Script Interpreter</key>
-	<string>/opt/local/bin/php</string>
+	<string>/usr/bin/env php</string>
 	<key>Shell Script File</key>
 	<string>komentuj.php</string>
 	<key>After</key>
@@ -53,7 +53,7 @@
 	<key>Image File</key>
 	<string>podstaw.png</string>
 	<key>Script Interpreter</key>
-	<string>/opt/local/bin/php</string>
+	<string>/usr/bin/env php</string>
 	<key>Shell Script File</key>
 	<string>podstaw.php</string>
 	<key>After</key>
