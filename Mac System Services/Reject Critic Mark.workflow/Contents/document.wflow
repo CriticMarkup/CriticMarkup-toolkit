@@ -70,16 +70,11 @@ del_edit = re.compile(r'(?s)\{\-\-(.*?)\-\-[ \t]*(\[(.*?)\])?[ \t]*\}')
 sub_edit = re.compile(r'''(?s)\{\~\~(?P&lt;original&gt;(?:[^\~\&gt;]|(?:\~(?!\&gt;)))+)\~\&gt;(?P&lt;new&gt;(?:[^\~\~]|(?:\~(?!\~\})))+)\~\~\}''')
 
 if len(selected_string) &gt; 0:
-    a = add_edit.search(selected_string)
-    d = del_edit.search(selected_string)
-    s = sub_edit.search(selected_string)
-    if a:
-        print ""
-    if d:
-        print d.group(1)
-    if s:
-        print s.group('original')
-        
+    a = add_edit.sub(r'', selected_string)
+    d = del_edit.sub(r'\1', a)
+    s = sub_edit.sub(r'\1', d)
+    print s
+
 else:
 	print selected_string</string>
 					<key>CheckedForUserDefaultShell</key>
