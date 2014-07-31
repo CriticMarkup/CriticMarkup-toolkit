@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+# CriticMarkup reject change script for BBEdit
+
+myMark = STDIN.read
+
+# CriticMarks
+# -----------
+# Addition {++ ++}
+# Deletion {-- --}
+# Substitution {~~ ~> ~~}
+# Comment {>> <<}
+# Highlight {== ==}{>> <<}
+
+addition_mark = /^\{\+\+(.+?)\+\+\}$/
+deletion_mark = /^\{\-\-(.+?)\-\-\}$/
+sub_mark = /^\{\~\~(.+?)\~\>(.+?)\~\~\}$/
+comment_mark = /^\{\>\>(.+?)\<\<\}/
+highlight_mark = /^\{\=\=(.+?)\=\=\}\{\>\>(.+?)\<\<\}$/
+
+if addition_mark =~ myMark
+  print ""
+elsif  deletion_mark =~ myMark
+  print myMark.gsub(deletion_mark, "\\1")
+elsif sub_mark =~ myMark
+  print myMark.gsub(sub_mark, "\\1")
+else 
+  
+end
